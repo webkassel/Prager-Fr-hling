@@ -6,10 +6,51 @@
 <title>Prager Frühling 1968 – Intervention als Akt der Verteidigung?</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<!-- reusable line-icon sprite (no external images) -->
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+<defs>
+  <symbol id="icon-tank" viewBox="0 0 64 64">
+    <rect x="8" y="34" width="40" height="12" rx="2"/>
+    <circle cx="28" cy="28" r="8"/>
+    <line x1="34" y1="24" x2="54" y2="15"/>
+    <line x1="6" y1="48" x2="50" y2="48"/>
+    <circle cx="14" cy="48" r="3"/><circle cx="24" cy="48" r="3"/><circle cx="34" cy="48" r="3"/><circle cx="44" cy="48" r="3"/>
+  </symbol>
+  <symbol id="icon-lock" viewBox="0 0 64 64">
+    <rect x="16" y="28" width="32" height="26" rx="4"/>
+    <path d="M22 28v-8a10 10 0 0 1 20 0v8"/>
+    <circle cx="32" cy="40" r="3"/>
+    <line x1="32" y1="43" x2="32" y2="48"/>
+  </symbol>
+  <symbol id="icon-arrow-up" viewBox="0 0 64 64">
+    <line x1="14" y1="50" x2="48" y2="16"/>
+    <polyline points="26,16 48,16 48,38"/>
+  </symbol>
+  <symbol id="icon-crack" viewBox="0 0 64 64">
+    <polyline points="30,2 22,24 38,30 18,62"/>
+  </symbol>
+  <symbol id="icon-star" viewBox="0 0 64 64">
+    <polygon points="32,6 39,25 59,25 43,37 49,57 32,45 15,57 21,37 5,25 25,25"/>
+  </symbol>
+  <symbol id="icon-doc" viewBox="0 0 64 64">
+    <rect x="14" y="6" width="36" height="52" rx="2"/>
+    <line x1="22" y1="20" x2="42" y2="20"/>
+    <line x1="22" y1="29" x2="42" y2="29"/>
+    <line x1="22" y1="38" x2="34" y2="38"/>
+  </symbol>
+  <symbol id="icon-flag" viewBox="0 0 64 64">
+    <line x1="16" y1="6" x2="16" y2="58"/>
+    <path d="M16 11h32l-9 11 9 11H16z"/>
+  </symbol>
+</defs>
+</svg>
+
+<div class="wipe" id="wipe"></div>
 
 <div class="timerbar" id="timerbar">
   <div class="timerbar-fill" id="timerbarFill"></div>
@@ -30,9 +71,10 @@
 
   <!-- SLIDE 0: TITLE -->
   <section class="slide title-slide" data-presenter="0">
+    <div class="bg-year" aria-hidden="true">1968</div>
     <div class="flagbar"><span></span><span></span><span></span></div>
     <p class="kicker">Referat &middot; Geschichte</p>
-    <h1>Prager Frühling 1968</h1>
+    <h1>Prager Frühling</h1>
     <h2>Intervention als Akt der Verteidigung?</h2>
     <div class="authors">
       <div class="author-chip p1">Person 1 <small>– Aufbruch &amp; Reform</small></div>
@@ -62,7 +104,7 @@
     </p>
     <ol class="agenda">
       <li class="agenda-item p1">
-        <span class="agenda-num">1</span>
+        <svg class="icon agenda-icon"><use href="#icon-arrow-up"/></svg>
         <div>
           <h3>Aufbruch &amp; Reform</h3>
           <p>Dubček, „Sozialismus mit menschlichem Antlitz“, das Aktionsprogramm der KPČ</p>
@@ -70,7 +112,7 @@
         <span class="agenda-who">Person 1</span>
       </li>
       <li class="agenda-item p2">
-        <span class="agenda-num">2</span>
+        <svg class="icon agenda-icon"><use href="#icon-crack"/></svg>
         <div>
           <h3>Der Ostblock reagiert</h3>
           <p>Warschauer Brief, Prager Antwort, Riss im Ostblock, Verhandlungen &amp; Eskalation</p>
@@ -78,7 +120,7 @@
         <span class="agenda-who">Person 2</span>
       </li>
       <li class="agenda-item p3">
-        <span class="agenda-num">3</span>
+        <svg class="icon agenda-icon"><use href="#icon-tank"/></svg>
         <div>
           <h3>Invasion &amp; Bewertung</h3>
           <p>Einmarsch, Breschnew-Doktrin, Fazit &amp; Diskussion</p>
@@ -120,16 +162,14 @@
           </li>
         </ul>
       </div>
-      <figure class="photo-card">
-        <div class="photo-frame">
-          <img src="assets/img/dubcek.jpg" alt="Alexander Dubček, 1968" onerror="showPlaceholder(this)">
-          <div class="photo-missing">
-            <strong>Bild einfügen</strong>
-            <span>Google-Suche: „Alexander Dubček 1968 portrait wikimedia commons“ &rarr; Datei mit freier Lizenz (Public Domain/CC) auswählen und als<br><code>assets/img/dubcek.jpg</code> speichern.</span>
-          </div>
-        </div>
-        <figcaption>Alexander Dubček<br><small>KPČ-Chef 1968/69, Symbolfigur des Reformkurses</small></figcaption>
-      </figure>
+      <div class="barometer">
+        <p class="barometer-title"><svg class="icon"><use href="#icon-arrow-up"/></svg> Reformkurs 1968</p>
+        <div class="bar-row"><span class="bar-label">Zensur gelockert</span><div class="bar"><div class="bar-fill" style="--val:78%"></div></div></div>
+        <div class="bar-row"><span class="bar-label">Meinungsfreiheit</span><div class="bar"><div class="bar-fill" style="--val:70%"></div></div></div>
+        <div class="bar-row"><span class="bar-label">Kulturelle Autonomie</span><div class="bar"><div class="bar-fill" style="--val:64%"></div></div></div>
+        <div class="bar-row"><span class="bar-label">Grundrechte gestärkt</span><div class="bar"><div class="bar-fill" style="--val:58%"></div></div></div>
+        <p class="barometer-note">eigene Einschätzung, keine Messgröße</p>
+      </div>
     </div>
     <div class="notes">
       Dubček wird Anfang Januar 1968 Parteichef und leitet damit einen tschechoslowakischen
@@ -160,8 +200,8 @@
         <li class="warn">Aber: Die KPČ behält ihre <strong>„führende Rolle“</strong> – Oppositionsparteien bleiben verboten.</li>
       </ul>
       <blockquote class="quote">
-        „Den Autoren des Aktionsprogramms schwebte […] ein System vor, das zugleich
-        pluralistisch und sozialistisch sein sollte.“
+        <svg class="icon quote-icon"><use href="#icon-doc"/></svg>
+        <span class="qtext">„Den Autoren des Aktionsprogramms schwebte […] ein System vor, das zugleich pluralistisch und sozialistisch sein sollte.“</span>
         <cite>– Zusammenfassung des Aktionsprogramms, bpb.de</cite>
       </blockquote>
     </div>
@@ -222,6 +262,13 @@
     </div>
     <h2>Der „Warschauer Brief“</h2>
     <p class="source-date">15. Juli 1968 – Brief der „Warschauer Fünf“ an das ZK der KPČ</p>
+    <div class="five-row" aria-hidden="true">
+      <svg class="icon"><use href="#icon-flag"/></svg>
+      <svg class="icon"><use href="#icon-flag"/></svg>
+      <svg class="icon"><use href="#icon-flag"/></svg>
+      <svg class="icon"><use href="#icon-flag"/></svg>
+      <svg class="icon"><use href="#icon-flag"/></svg>
+    </div>
     <div class="two-col">
       <ul class="bullets">
         <li>Absender: Bulgarien, DDR, Polen, Ungarn, Sowjetunion.</li>
@@ -230,9 +277,8 @@
         <li>Argument: Sicherheit der ČSSR sei „gemeinsame Angelegenheit“ aller Warschauer-Pakt-Staaten.</li>
       </ul>
       <blockquote class="quote">
-        „Das sind nicht mehr nur Ihre Angelegenheiten. Das sind die gemeinsamen
-        Angelegenheiten aller kommunistischen und Arbeiterparteien […], die sich im
-        Warschauer Vertrag vereinigt haben.“
+        <svg class="icon quote-icon"><use href="#icon-doc"/></svg>
+        <span class="qtext">„Das sind nicht mehr nur Ihre Angelegenheiten. Das sind die gemeinsamen Angelegenheiten aller kommunistischen und Arbeiterparteien […], die sich im Warschauer Vertrag vereinigt haben.“</span>
         <cite>– Warschauer Brief, 15.07.1968</cite>
       </blockquote>
     </div>
@@ -251,15 +297,16 @@
       <span class="slidenum">5 / 9</span>
     </div>
     <h2>Antwort aus Prag – und ein Riss im Ostblock</h2>
-    <div class="two-col">
-      <div>
+    <div class="split">
+      <svg class="icon crack-divider" aria-hidden="true"><use href="#icon-crack"/></svg>
+      <div class="split-half left">
         <h3 class="mini-head">Prager Antwort (18. Juli 1968)</h3>
         <ul class="bullets">
           <li>Bekenntnis: KPČ will „sozialistische Demokratie“ entwickeln und gegen „antisozialistische Gruppierungen“ vorgehen.</li>
           <li>Aber: beharrt auf dem eigenen Reformweg.</li>
         </ul>
       </div>
-      <div>
+      <div class="split-half right">
         <h3 class="mini-head">Solidarität von unerwarteter Seite</h3>
         <ul class="bullets">
           <li><strong>Nicolae Ceaușescu</strong> (Rumänien) verurteilt öffentlich (21.08.) den Einmarsch als „schweren Fehler“.</li>
@@ -268,8 +315,8 @@
       </div>
     </div>
     <blockquote class="quote small">
-      „Das Eindringen der Truppen der fünf sozialistischen Länder in die Tschechoslowakei
-      ist ein schwerer Fehler und eine ernste Gefahr für den Frieden in Europa […].“
+      <svg class="icon quote-icon"><use href="#icon-doc"/></svg>
+      <span class="qtext">„Das Eindringen der Truppen der fünf sozialistischen Länder in die Tschechoslowakei ist ein schwerer Fehler und eine ernste Gefahr für den Frieden in Europa […].“</span>
       <cite>– Nicolae Ceaușescu, 21.08.1968</cite>
     </blockquote>
     <div class="notes">
@@ -297,7 +344,7 @@
       <div class="tl-item highlight">
         <div class="tl-dot"></div>
         <div class="tl-date">16. August 1968</div>
-        <div class="tl-text">Die sowjetische Führung beschließt den Einmarsch in die Tschechoslowakei.</div>
+        <div class="tl-text">Die sowjetische Führung beschließt den Einmarsch in die Tschechoslowakei. <span class="stamp">beschlossen</span></div>
       </div>
     </div>
     <p class="handoff">→ Was in der Nacht zum 21. August geschieht, erklärt Person 3.</p>
@@ -327,16 +374,19 @@
         <li>24.08.: „Moskauer Protokoll“ – Rücknahme der Reformen erzwungen.</li>
         <li>30.08.: Pressezensur zurück · <strong>April 1969:</strong> Dubček abgesetzt → Ende des Prager Frühlings.</li>
       </ul>
-      <figure class="photo-card">
-        <div class="photo-frame">
-          <img src="assets/img/invasion-wenzelsplatz.jpg" alt="Passiver Widerstand gegen sowjetische Panzer, Prag, 21.08.1968" onerror="showPlaceholder(this)">
-          <div class="photo-missing">
-            <strong>Bild einfügen</strong>
-            <span>Google-Suche: „Prague Spring 1968 tank Wenceslas Square wikimedia commons“ &rarr; Datei mit freier Lizenz (Public Domain/CC) auswählen und als<br><code>assets/img/invasion-wenzelsplatz.jpg</code> speichern.</span>
-          </div>
+      <div class="stat-panel">
+        <div class="stat">
+          <span class="stat-num" data-counter="500000">0</span>
+          <span class="stat-label">Soldaten aus 4 Warschauer-Pakt-Staaten</span>
         </div>
-        <figcaption>Passiver Widerstand gegen sowjetische Panzer, Prag, 21.08.1968<br><small>Bildquelle beim Einfügen ergänzen (Wikimedia Commons, Lizenz angeben)</small></figcaption>
-      </figure>
+        <div class="tank-convergence" aria-hidden="true">
+          <svg class="icon tank t1"><use href="#icon-tank"/></svg>
+          <svg class="icon tank t2"><use href="#icon-tank"/></svg>
+          <svg class="icon tank t3"><use href="#icon-tank"/></svg>
+          <svg class="icon tank t4"><use href="#icon-tank"/></svg>
+        </div>
+        <p class="stat-caption">UdSSR &middot; Polen &middot; Ungarn &middot; Bulgarien &middot; Nacht zum 21.08.1968</p>
+      </div>
     </div>
     <div class="notes">
       Die Fakten knapp und chronologisch: Einmarschstärke, passiver Widerstand als
@@ -356,17 +406,23 @@
     <h2>Die „Breschnew-Doktrin“</h2>
     <p class="source-date">Rede Leonid Breschnews, 12. November 1968</p>
     <div class="two-col">
-      <ul class="bullets">
-        <li>Offizielle Formel: Staaten setzen sich für „strikte Beachtung der Souveränität aller Länder“ ein …</li>
-        <li>… <strong>ABER:</strong> Gefahr für den Sozialismus in einem Land = „gemeinsames Problem“ aller sozialistischen Länder.</li>
-        <li>„Militärische Hilfe“ wird als erzwungene, notwendige Verteidigungsmaßnahme dargestellt.</li>
-        <li>Prinzip der <strong>„begrenzten Souveränität“</strong> – rechtfertigt spätere Interventionen (z. B. Afghanistan 1979).</li>
-      </ul>
-      <blockquote class="quote">
-        „[…] dann wird dies nicht nur zu einem Problem für das Volk dieses Landes,
-        sondern auch zu einem gemeinsamen Problem […] aller sozialistischen Länder.“
-        <cite>– Leonid Breschnew, 12.11.1968</cite>
-      </blockquote>
+      <div>
+        <ul class="bullets">
+          <li>Offizielle Formel: Staaten setzen sich für „strikte Beachtung der Souveränität aller Länder“ ein …</li>
+          <li>… <strong>ABER:</strong> Gefahr für den Sozialismus in einem Land = „gemeinsames Problem“ aller sozialistischen Länder.</li>
+          <li>„Militärische Hilfe“ wird als erzwungene, notwendige Verteidigungsmaßnahme dargestellt.</li>
+          <li>Prinzip der <strong>„begrenzten Souveränität“</strong> – rechtfertigt spätere Interventionen (z. B. Afghanistan 1979).</li>
+        </ul>
+        <blockquote class="quote">
+          <svg class="icon quote-icon"><use href="#icon-doc"/></svg>
+          <span class="qtext">„[…] dann wird dies nicht nur zu einem Problem für das Volk dieses Landes, sondern auch zu einem gemeinsamen Problem […] aller sozialistischen Länder.“</span>
+          <cite>– Leonid Breschnew, 12.11.1968</cite>
+        </blockquote>
+      </div>
+      <div class="squeeze">
+        <svg class="icon lock-icon"><use href="#icon-lock"/></svg>
+        <p class="squeeze-label">„Begrenzte<br>Souveränität“</p>
+      </div>
     </div>
     <div class="notes">
       Die Breschnew-Doktrin ist die nachträgliche ideologische Rechtfertigung der

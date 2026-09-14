@@ -1,10 +1,3 @@
-// Called via onerror on <img> tags whose source image hasn't been added yet —
-// swaps the broken image for a styled "please add this photo" placeholder.
-function showPlaceholder(img) {
-  const frame = img.closest(".photo-frame");
-  if (frame) frame.classList.add("missing");
-}
-
 (function () {
   const slides = Array.from(document.querySelectorAll(".slide"));
   const dotsEl = document.getElementById("dots");
@@ -13,8 +6,10 @@ function showPlaceholder(img) {
   const timerFill = document.getElementById("timerbarFill");
   const clockTime = document.getElementById("clockTime");
   const clockToggle = document.getElementById("clockToggle");
+  const wipe = document.getElementById("wipe");
 
   let current = 0;
+  let animating = false;
   const total = slides.length;
 
   // Build progress dots
@@ -36,14 +31,25 @@ function showPlaceholder(img) {
     dots.forEach((d, i) => d.classList.toggle("active", i === current));
     prevBtn.disabled = current === 0;
     nextBtn.disabled = current === total - 1;
-    // presentation progress based on slide index (rough guide only)
     const pct = (current / (total - 1)) * 100;
     timerFill.style.width = pct + "%";
+    runSlideEffects(slides[current]);
   }
 
+  // Quick film-cut wipe masks the actual slide swap for a punchier transition.
   function goTo(i) {
-    current = Math.max(0, Math.min(total - 1, i));
-    render();
+    const target = Math.max(0, Math.min(total - 1, i));
+    if (target === current || animating) return;
+    animating = true;
+    current = target;
+    wipe.classList.remove("play");
+    void wipe.offsetWidth; // restart animation
+    wipe.classList.add("play");
+    setTimeout(render, 230);
+    setTimeout(() => {
+      wipe.classList.remove("play");
+      animating = false;
+    }, 500);
   }
 
   prevBtn.addEventListener("click", () => goTo(current - 1));
@@ -73,6 +79,49 @@ function showPlaceholder(img) {
     } else {
       document.exitFullscreen();
     }
+  }
+
+  // ---- per-slide kinetic effects (typewriter quotes + counting stats) ----
+  function typewriter(el) {
+    if (!el.dataset.full) el.dataset.full = el.textContent.trim();
+    const full = el.dataset.full;
+    if (el._timer) clearInterval(el._timer);
+    el.textContent = "";
+    el.classList.add("typing");
+    const cite = el.closest(".quote") && el.closest(".quote").querySelector("cite");
+    if (cite) cite.classList.remove("shown");
+    let i = 0;
+    el._timer = setInterval(() => {
+      i++;
+      el.textContent = full.slice(0, i);
+      if (i >= full.length) {
+        clearInterval(el._timer);
+        el.classList.remove("typing");
+        if (cite) cite.classList.add("shown");
+      }
+    }, 12);
+  }
+
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.counter, 10) || 0;
+    const duration = 1400;
+    const start = performance.now();
+    const token = Symbol();
+    el._token = token;
+    function tick(now) {
+      if (el._token !== token) return;
+      const p = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(eased * target).toLocaleString("de-DE");
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function runSlideEffects(slide) {
+    if (!slide) return;
+    slide.querySelectorAll(".qtext").forEach(typewriter);
+    slide.querySelectorAll("[data-counter]").forEach(animateCounter);
   }
 
   // ---- Stopwatch (helps pace the 10-minute talk) ----
