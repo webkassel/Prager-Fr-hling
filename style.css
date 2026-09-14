@@ -99,12 +99,6 @@ body.mood-p3 .mood-3{ opacity:1; }
 .brand span{ color:var(--p2); }
 .brand::before{ content:"§ "; color:var(--p3); font-family:var(--mono); font-size:.9rem; }
 
-.clock{ display:flex; align-items:center; gap:9px; font-family:var(--mono); font-size:.8rem; color:var(--ink-dim); }
-.clock #clockTime{ color:var(--ink); font-weight:600; }
-#clockToggle{ background:var(--bg-panel); border:1px solid var(--rule); color:var(--ink); border-radius:50%; width:26px; height:26px; cursor:pointer; font-size:.65rem; display:flex; align-items:center; justify-content:center; }
-#clockToggle:hover{ border-color: var(--p2); color:var(--p2); }
-.clockGoal{ opacity:.75; }
-
 /* ---------- deck / slides ---------- */
 #deck{ position:relative; width:100%; height:100vh; z-index:1; }
 
@@ -337,9 +331,6 @@ body.mood-p3 .mood-3{ opacity:1; }
 .agenda-who{ font-family:var(--mono); font-size:.76rem; color:var(--ink-dim); white-space:nowrap; text-transform:uppercase; letter-spacing:.04em; }
 
 /* ---------- speaker notes ---------- */
-.notes{ display:none; margin-top: 1.7em; padding: 16px 20px; background: rgba(255,176,32,.07); border:1px dashed var(--p3); border-radius: var(--radius); font-size:.85rem; line-height:1.6; color:var(--ink-dim); max-width: 900px; }
-body.show-notes .notes{ display:block; }
-
 /* ---------- nav controls ---------- */
 .controls{ position:fixed; left:0; right:0; bottom:24px; z-index:40; display:flex; align-items:center; justify-content:center; gap: 18px; }
 .navbtn{ width:38px; height:38px; border-radius:50%; cursor:pointer; background:var(--bg-panel); border:1px solid var(--rule); color:var(--ink); font-size:1rem; display:flex; align-items:center; justify-content:center; box-shadow: var(--shadow); }

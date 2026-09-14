@@ -4,8 +4,6 @@
   const prevBtn = document.getElementById("prevBtn");
   const nextBtn = document.getElementById("nextBtn");
   const timerFill = document.getElementById("timerbarFill");
-  const clockTime = document.getElementById("clockTime");
-  const clockToggle = document.getElementById("clockToggle");
   const wipe = document.getElementById("wipe");
 
   let current = 0;
@@ -65,8 +63,6 @@
     } else if (e.key === "ArrowLeft" || e.key === "PageUp") {
       e.preventDefault();
       goTo(current - 1);
-    } else if (e.key.toLowerCase() === "n") {
-      document.body.classList.toggle("show-notes");
     } else if (e.key.toLowerCase() === "f") {
       toggleFullscreen();
     } else if (e.key === "Home") {
@@ -126,37 +122,6 @@
     slide.querySelectorAll(".qtext").forEach(typewriter);
     slide.querySelectorAll("[data-counter]").forEach(animateCounter);
   }
-
-  // ---- Stopwatch (helps pace the 10-minute talk) ----
-  let elapsed = 0;
-  let running = false;
-  let intervalId = null;
-
-  function formatTime(sec) {
-    const m = Math.floor(sec / 60).toString().padStart(2, "0");
-    const s = Math.floor(sec % 60).toString().padStart(2, "0");
-    return m + ":" + s;
-  }
-
-  function tick() {
-    elapsed += 1;
-    clockTime.textContent = formatTime(elapsed);
-    if (elapsed >= 600) {
-      clockTime.style.color = "var(--p2)";
-    } else if (elapsed >= 480) {
-      clockTime.style.color = "var(--p3)";
-    }
-  }
-
-  clockToggle.addEventListener("click", () => {
-    running = !running;
-    clockToggle.textContent = running ? "❚❚" : "▶";
-    if (running) {
-      intervalId = setInterval(tick, 1000);
-    } else {
-      clearInterval(intervalId);
-    }
-  });
 
   render();
 })();

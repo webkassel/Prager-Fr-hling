@@ -15,28 +15,23 @@ Präsentation als Website für drei Vortragende, ausgelegt auf **max. 10 Minuten
 |---|---|
 | `→` / `Leertaste` | nächste Folie |
 | `←` | vorherige Folie |
-| `N` | Sprechernotizen ein-/ausblenden |
 | `F` | Vollbildmodus |
 | Klick auf Punkt (unten) | direkt zu einer Folie springen |
 
-Oben rechts gibt es eine Stoppuhr (▶ startet/pausiert) mit Ziel **10:00 Min.** als
-Orientierung – die Balkenfarbe warnt ab 8 Minuten (gelb) und 10 Minuten (rot).
+Der dünne Farbbalken ganz oben zeigt den Fortschritt durch die Folien.
 
 ## Struktur
 
 1. **Titelfolie** – Thema, Leitfrage, Team
 2. **Gliederung** – Überblick über die drei Abschnitte
-3. **Person 1 – Aufbruch & Reform** (3 Folien): Dubček, Aktionsprogramm, Zeitleiste
-4. **Person 2 – Der Ostblock reagiert** (3 Folien): Warschauer Brief, Prager Antwort &
+3. **Adin – Aufbruch & Reform** (3 Folien): Dubček, Aktionsprogramm, Zeitleiste
+4. **Samuel – Der Ostblock reagiert** (3 Folien): Warschauer Brief, Prager Antwort &
    Ceaușescu, Verhandlungen & Eskalation
-5. **Person 3 – Invasion & Bewertung** (3 Folien): Einmarsch, Breschnew-Doktrin, Fazit
+5. **Emil – Invasion & Bewertung** (3 Folien): Einmarsch, Breschnew-Doktrin, Fazit
 
 ## Anpassen
 
-- Namen der drei Vortragenden und das Datum in `index.html` im Titelfolien-Abschnitt
-  eintragen (Platzhalter: `Person 1/2/3`, `[Datum einsetzen]`).
-- Sprechernotizen stehen als `<div class="notes">…</div>` direkt unter jeder Folie im
-  HTML und lassen sich dort frei anpassen.
+- Namen und Inhalte stehen direkt als Text in `index.html`, dort auch frei anpassbar.
 
 ## Quellen
 
