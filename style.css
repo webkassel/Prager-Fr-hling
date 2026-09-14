@@ -254,7 +254,22 @@ body.mood-p3 .mood-3{ opacity:1; }
 @keyframes stampSlam{ from{ transform:rotate(-8deg) scale(2); opacity:0; } 60%{ transform:rotate(-8deg) scale(.9); opacity:1; } to{ transform:rotate(-8deg) scale(1); opacity:1; } }
 
 .handoff{ margin-top: 1.5em; color:var(--ink-dim); font-family:var(--mono); font-style:italic; font-size:.95rem; opacity:0; }
-.slide.active .handoff{ animation: fadeUp .5s ease both .7s; }
+.slide.active .handoff{ animation: fadeUp .5s ease both .95s; }
+
+/* ---------- infobox (standalone fact callout) ---------- */
+.infobox{
+  display:flex; align-items:flex-start; gap:16px;
+  margin-top: 1.4em; padding: 16px 20px;
+  background: linear-gradient(155deg, var(--bg-panel-alt), var(--bg-panel) 70%);
+  border:1px solid var(--rule); border-left:4px solid var(--p2);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  box-shadow: var(--shadow), 0 0 32px -14px rgba(255,59,78,.5);
+  opacity:0; max-width: 720px;
+}
+.infobox-icon{ width:30px; height:30px; color:var(--p2); flex-shrink:0; margin-top:2px; filter: drop-shadow(0 0 10px rgba(255,59,78,.6)); }
+.infobox-title{ margin:0 0 4px; font-family:var(--display); font-size:1.3rem; letter-spacing:.01em; color:var(--ink); }
+.infobox-text{ margin:0; font-size:.86rem; color:var(--ink-dim); line-height:1.5; }
+.slide.active .infobox{ animation: fadeUp .5s ease both .68s; }
 
 /* ---------- squeeze / lock graphic (Breschnew-Doktrin) ---------- */
 .squeeze{ text-align:center; padding-top: 1em; }
