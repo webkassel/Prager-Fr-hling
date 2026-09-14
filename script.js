@@ -33,6 +33,9 @@
     nextBtn.disabled = current === total - 1;
     const pct = (current / (total - 1)) * 100;
     timerFill.style.width = pct + "%";
+    document.body.classList.remove("mood-p1", "mood-p2", "mood-p3");
+    const presenter = slides[current].dataset.presenter;
+    if (presenter && presenter !== "0") document.body.classList.add("mood-p" + presenter);
     runSlideEffects(slides[current]);
   }
 

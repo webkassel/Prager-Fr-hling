@@ -47,8 +47,23 @@
     <line x1="16" y1="6" x2="16" y2="58"/>
     <path d="M16 11h32l-9 11 9 11H16z"/>
   </symbol>
+  <symbol id="icon-scale" viewBox="0 0 64 64">
+    <line x1="32" y1="6" x2="32" y2="52"/>
+    <line x1="12" y1="14" x2="52" y2="14"/>
+    <line x1="12" y1="14" x2="6" y2="28"/>
+    <line x1="12" y1="14" x2="18" y2="28"/>
+    <path d="M6 28a6 6 0 0 0 12 0"/>
+    <line x1="52" y1="14" x2="46" y2="28"/>
+    <line x1="52" y1="14" x2="58" y2="28"/>
+    <path d="M46 28a6 6 0 0 0 12 0"/>
+    <line x1="20" y1="56" x2="44" y2="56"/>
+  </symbol>
 </defs>
 </svg>
+
+<div class="mood mood-1" aria-hidden="true"></div>
+<div class="mood mood-2" aria-hidden="true"></div>
+<div class="mood mood-3" aria-hidden="true"></div>
 
 <div class="wipe" id="wipe"></div>
 
@@ -77,11 +92,10 @@
     <h1>Prager Frühling</h1>
     <h2>Intervention als Akt der Verteidigung?</h2>
     <div class="authors">
-      <div class="author-chip p1">Person 1 <small>– Aufbruch &amp; Reform</small></div>
-      <div class="author-chip p2">Person 2 <small>– Der Ostblock reagiert</small></div>
-      <div class="author-chip p3">Person 3 <small>– Invasion &amp; Bewertung</small></div>
+      <div class="author-chip p1">Adin <small>– Aufbruch &amp; Reform</small></div>
+      <div class="author-chip p2">Samuel <small>– Der Ostblock reagiert</small></div>
+      <div class="author-chip p3">Adin <small>– Invasion &amp; Bewertung</small></div>
     </div>
-    <p class="hint">Namen bitte in <code>index.html</code> eintragen &middot; Datum: <code>[Datum einsetzen]</code></p>
     <div class="notes">
       Kurz vorstellen: Wer wir sind, welches Thema (Prager Frühling 1968) und die Leitfrage,
       an der wir den Vortrag aufhängen: War die Intervention des Warschauer Paktes ein
@@ -93,6 +107,7 @@
 
   <!-- SLIDE: GLIEDERUNG (Agenda) -->
   <section class="slide outline-slide" data-presenter="0">
+    <svg class="icon bg-icon" aria-hidden="true"><use href="#icon-star"/></svg>
     <div class="slide-head">
       <span class="tag tag-neutral">Gliederung</span>
     </div>
@@ -109,7 +124,7 @@
           <h3>Aufbruch &amp; Reform</h3>
           <p>Dubček, „Sozialismus mit menschlichem Antlitz“, das Aktionsprogramm der KPČ</p>
         </div>
-        <span class="agenda-who">Person 1</span>
+        <span class="agenda-who">Adin</span>
       </li>
       <li class="agenda-item p2">
         <svg class="icon agenda-icon"><use href="#icon-crack"/></svg>
@@ -117,7 +132,7 @@
           <h3>Der Ostblock reagiert</h3>
           <p>Warschauer Brief, Prager Antwort, Riss im Ostblock, Verhandlungen &amp; Eskalation</p>
         </div>
-        <span class="agenda-who">Person 2</span>
+        <span class="agenda-who">Samuel</span>
       </li>
       <li class="agenda-item p3">
         <svg class="icon agenda-icon"><use href="#icon-tank"/></svg>
@@ -125,7 +140,7 @@
           <h3>Invasion &amp; Bewertung</h3>
           <p>Einmarsch, Breschnew-Doktrin, Fazit &amp; Diskussion</p>
         </div>
-        <span class="agenda-who">Person 3</span>
+        <span class="agenda-who">Adin</span>
       </li>
     </ol>
     <div class="notes">
@@ -141,7 +156,7 @@
   <!-- SLIDE 1 -->
   <section class="slide" data-presenter="1">
     <div class="slide-head">
-      <span class="tag p1">Person 1 · Aufbruch &amp; Reform</span>
+      <span class="tag p1">Adin · Aufbruch &amp; Reform</span>
       <span class="slidenum">1 / 9</span>
     </div>
     <h2>Was war der „Prager Frühling“?</h2>
@@ -185,8 +200,9 @@
 
   <!-- SLIDE 2 -->
   <section class="slide" data-presenter="1">
+    <svg class="icon bg-icon" aria-hidden="true"><use href="#icon-doc"/></svg>
     <div class="slide-head">
-      <span class="tag p1">Person 1 · Aufbruch &amp; Reform</span>
+      <span class="tag p1">Adin · Aufbruch &amp; Reform</span>
       <span class="slidenum">2 / 9</span>
     </div>
     <h2>Das „Aktionsprogramm“ der KPČ</h2>
@@ -216,8 +232,9 @@
 
   <!-- SLIDE 3 -->
   <section class="slide" data-presenter="1">
+    <svg class="icon bg-icon" aria-hidden="true"><use href="#icon-arrow-up"/></svg>
     <div class="slide-head">
-      <span class="tag p1">Person 1 · Aufbruch &amp; Reform</span>
+      <span class="tag p1">Adin · Aufbruch &amp; Reform</span>
       <span class="slidenum">3 / 9</span>
     </div>
     <h2>Von der Hoffnung zum Druck</h2>
@@ -243,12 +260,12 @@
         <div class="tl-text">wachsender Druck der Sowjetunion &amp; anderer Ostblockstaaten</div>
       </div>
     </div>
-    <p class="handoff">→ Wie reagiert der Ostblock auf diesen Kurs? Das übernimmt Person 2.</p>
+    <p class="handoff">→ Wie reagiert der Ostblock auf diesen Kurs? Das übernimmt Samuel.</p>
     <div class="notes">
       Übergabe-Folie: kurzer chronologischer Überblick, der zum nächsten Abschnitt
       überleitet. Das "Manifest der 2000 Worte" ist der Höhepunkt der öffentlichen
       Reformbegeisterung – und gleichzeitig der Moment, ab dem Moskau nervös wird.
-      Mit dem Satz "wachsender Druck" bewusst an Person 2 übergeben.
+      Mit dem Satz "wachsender Druck" bewusst an Samuel übergeben.
     </div>
   </section>
 
@@ -257,7 +274,7 @@
   <!-- SLIDE 4 -->
   <section class="slide" data-presenter="2">
     <div class="slide-head">
-      <span class="tag p2">Person 2 · Der Ostblock reagiert</span>
+      <span class="tag p2">Samuel · Der Ostblock reagiert</span>
       <span class="slidenum">4 / 9</span>
     </div>
     <h2>Der „Warschauer Brief“</h2>
@@ -293,7 +310,7 @@
   <!-- SLIDE 5 -->
   <section class="slide" data-presenter="2">
     <div class="slide-head">
-      <span class="tag p2">Person 2 · Der Ostblock reagiert</span>
+      <span class="tag p2">Samuel · Der Ostblock reagiert</span>
       <span class="slidenum">5 / 9</span>
     </div>
     <h2>Antwort aus Prag – und ein Riss im Ostblock</h2>
@@ -330,8 +347,9 @@
 
   <!-- SLIDE 6 -->
   <section class="slide" data-presenter="2">
+    <svg class="icon bg-icon" aria-hidden="true"><use href="#icon-crack"/></svg>
     <div class="slide-head">
-      <span class="tag p2">Person 2 · Der Ostblock reagiert</span>
+      <span class="tag p2">Samuel · Der Ostblock reagiert</span>
       <span class="slidenum">6 / 9</span>
     </div>
     <h2>Verhandlungen und Eskalation</h2>
@@ -347,11 +365,11 @@
         <div class="tl-text">Die sowjetische Führung beschließt den Einmarsch in die Tschechoslowakei. <span class="stamp">beschlossen</span></div>
       </div>
     </div>
-    <p class="handoff">→ Was in der Nacht zum 21. August geschieht, erklärt Person 3.</p>
+    <p class="handoff">→ Was in der Nacht zum 21. August geschieht, erklärt Adin.</p>
     <div class="notes">
       Kurz erklären: Trotz Verhandlungen und geheimer Zugeständnisse Dubčeks entscheidet
       sich die sowjetische Führung schon am 16. August für die militärische Lösung –
-      die Gespräche waren also faktisch nur Zeitgewinn. Direkt an Person 3 übergeben,
+      die Gespräche waren also faktisch nur Zeitgewinn. Direkt an Adin übergeben,
       die die Invasion selbst behandelt.
     </div>
   </section>
@@ -361,7 +379,7 @@
   <!-- SLIDE 7 -->
   <section class="slide" data-presenter="3">
     <div class="slide-head">
-      <span class="tag p3">Person 3 · Invasion &amp; Bewertung</span>
+      <span class="tag p3">Adin · Invasion &amp; Bewertung</span>
       <span class="slidenum">7 / 9</span>
     </div>
     <h2>Die Invasion – 20./21. August 1968</h2>
@@ -400,7 +418,7 @@
   <!-- SLIDE 8 -->
   <section class="slide" data-presenter="3">
     <div class="slide-head">
-      <span class="tag p3">Person 3 · Invasion &amp; Bewertung</span>
+      <span class="tag p3">Adin · Invasion &amp; Bewertung</span>
       <span class="slidenum">8 / 9</span>
     </div>
     <h2>Die „Breschnew-Doktrin“</h2>
@@ -435,8 +453,9 @@
 
   <!-- SLIDE 9 -->
   <section class="slide" data-presenter="3">
+    <svg class="icon bg-icon" aria-hidden="true"><use href="#icon-scale"/></svg>
     <div class="slide-head">
-      <span class="tag p3">Person 3 · Invasion &amp; Bewertung</span>
+      <span class="tag p3">Adin · Invasion &amp; Bewertung</span>
       <span class="slidenum">9 / 9</span>
     </div>
     <h2>Fazit: Akt der Verteidigung?</h2>
