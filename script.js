@@ -1,3 +1,10 @@
+// Called via onerror on <img> tags whose source image hasn't been added yet —
+// swaps the broken image for a styled "please add this photo" placeholder.
+function showPlaceholder(img) {
+  const frame = img.closest(".photo-frame");
+  if (frame) frame.classList.add("missing");
+}
+
 (function () {
   const slides = Array.from(document.querySelectorAll(".slide"));
   const dotsEl = document.getElementById("dots");
