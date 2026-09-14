@@ -181,18 +181,19 @@ body.mood-p3 .mood-3{ opacity:1; }
 .barometer{ background:linear-gradient(155deg, var(--bg-panel-alt), var(--bg-panel) 70%); border:1px solid var(--rule); border-top:3px solid var(--p1); border-radius:var(--radius); padding:22px 24px; box-shadow: var(--shadow), 0 0 32px -16px rgba(61,139,253,.5); transform: rotate(.5deg); }
 .barometer-title{ margin:0 0 16px; font-family:var(--mono); font-size:.8rem; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-dim); display:flex; align-items:center; gap:8px; }
 .barometer-title .icon{ color:var(--p1); width:16px; height:16px; }
-.bar-row{ margin-bottom:14px; }
-.bar-row:last-of-type{ margin-bottom:6px; }
-.bar-label{ display:block; font-size:.8rem; color:var(--ink-dim); margin-bottom:5px; }
-.bar{ height:9px; background:var(--rule-dark); border-radius:6px; overflow:hidden; }
-.bar-fill{ height:100%; width:0; border-radius:6px; background: linear-gradient(90deg, var(--p1), var(--p3)); }
-@keyframes fillBar{ from{ width:0; } to{ width:var(--val); } }
-.slide.active .bar-fill{ animation: fillBar 1s cubic-bezier(.2,.7,.2,1) both; }
-.slide.active .bar-row:nth-child(2) .bar-fill{ animation-delay:.1s; }
-.slide.active .bar-row:nth-child(3) .bar-fill{ animation-delay:.24s; }
-.slide.active .bar-row:nth-child(4) .bar-fill{ animation-delay:.38s; }
-.slide.active .bar-row:nth-child(5) .bar-fill{ animation-delay:.52s; }
-.barometer-note{ margin:10px 0 0; font-size:.68rem; color:var(--ink-dim); opacity:.7; font-style:italic; }
+.shift-row{ padding:10px 0; border-bottom:1px solid var(--rule); opacity:0; }
+.shift-row:last-of-type{ border-bottom:none; padding-bottom:0; }
+.shift-cat{ display:block; font-family:var(--mono); font-size:.68rem; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-dim); margin-bottom:4px; }
+.shift-change{ margin:0; font-size:.94rem; }
+.shift-change .before{ color:var(--ink-dim); text-decoration:line-through; text-decoration-color:var(--p2); text-decoration-thickness:2px; opacity:.85; }
+.shift-change .arrow{ margin:0 9px; color:var(--p3); font-weight:700; }
+.shift-change .after{ color:var(--ink); font-weight:700; text-shadow: 0 0 16px rgba(61,139,253,.35); }
+.slide.active .shift-row{ animation: fadeUp .45s ease both; }
+.slide.active .shift-row:nth-child(2){ animation-delay:.1s; }
+.slide.active .shift-row:nth-child(3){ animation-delay:.22s; }
+.slide.active .shift-row:nth-child(4){ animation-delay:.34s; }
+.slide.active .shift-row:nth-child(5){ animation-delay:.46s; }
+.barometer-note{ margin:14px 0 0; font-size:.68rem; color:var(--ink-dim); opacity:.7; font-style:italic; }
 
 /* ---------- stat / counter panel (replaces photo, invasion slide) ---------- */
 .stat-panel{ text-align:center; background:linear-gradient(155deg, var(--bg-panel-alt), var(--bg-panel) 70%); border:1px solid var(--rule); border-top:3px solid var(--p2); border-radius:var(--radius); padding: 28px 20px; box-shadow: var(--shadow), 0 0 40px -16px rgba(255,59,78,.55); transform: rotate(-.5deg); }
